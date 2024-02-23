@@ -73,6 +73,7 @@ body * {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  animation: botao-back 0.4s;
 }
 #switch span {
   width: 64px;
@@ -85,8 +86,10 @@ body * {
   display: flex;
 }
 .light #switch button {
-  right: 0%;
-  left: initial;
+  animation: botao-in 0.4s forwards;
+}
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 /* Links - Lista */
 ul {
@@ -146,5 +149,23 @@ footer {
   }
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes botao-in {
+  from{
+    left: 0%;
+  }
+  to {
+    left: 50%;
+  }
+} 
+@keyframes botao-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0%;
   }
 }
